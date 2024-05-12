@@ -55,5 +55,10 @@ namespace PansiyonOtomasyonu
                 MessageBox.Show($"Hava durumu bilgisi alınırken bir hata oluştu: {ex.Message}");
             }
         }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

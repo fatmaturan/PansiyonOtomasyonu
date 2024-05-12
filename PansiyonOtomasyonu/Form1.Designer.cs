@@ -40,22 +40,26 @@
             // labelKullanıcıAdı
             // 
             this.labelKullanıcıAdı.AutoSize = true;
-            this.labelKullanıcıAdı.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKullanıcıAdı.BackColor = System.Drawing.Color.Transparent;
+            this.labelKullanıcıAdı.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKullanıcıAdı.ForeColor = System.Drawing.SystemColors.Info;
             this.labelKullanıcıAdı.Location = new System.Drawing.Point(68, 230);
             this.labelKullanıcıAdı.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelKullanıcıAdı.Name = "labelKullanıcıAdı";
-            this.labelKullanıcıAdı.Size = new System.Drawing.Size(179, 30);
+            this.labelKullanıcıAdı.Size = new System.Drawing.Size(193, 30);
             this.labelKullanıcıAdı.TabIndex = 0;
             this.labelKullanıcıAdı.Text = "Kullanıcı Adı:";
             // 
             // labelŞifre
             // 
             this.labelŞifre.AutoSize = true;
-            this.labelŞifre.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelŞifre.Location = new System.Drawing.Point(146, 308);
+            this.labelŞifre.BackColor = System.Drawing.Color.Transparent;
+            this.labelŞifre.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelŞifre.ForeColor = System.Drawing.SystemColors.Info;
+            this.labelŞifre.Location = new System.Drawing.Point(144, 305);
             this.labelŞifre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelŞifre.Name = "labelŞifre";
-            this.labelŞifre.Size = new System.Drawing.Size(76, 30);
+            this.labelŞifre.Size = new System.Drawing.Size(82, 30);
             this.labelŞifre.TabIndex = 1;
             this.labelŞifre.Text = "Şifre:";
             // 

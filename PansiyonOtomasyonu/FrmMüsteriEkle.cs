@@ -63,7 +63,7 @@ namespace PansiyonOtomasyonu
             {
                 MessageBox.Show("Lütfen tüm bilgileri doldurun.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            } 
 
             TxtOdaNo.Text = "102";
             baglanti.Open();
@@ -201,7 +201,7 @@ namespace PansiyonOtomasyonu
 
         private void FrmMüsteriEkle_Load(object sender, EventArgs e)
         {
-            // az önce gösterdiğim yerde sadece odaya tıklayınca sanırım veriyi kaydeiyor ilgileri girmeden böyle oldu kırmızı onu nasıl halledicez
+            
             //oda 101
             baglanti.Open();
             SqlCommand komut1 = new SqlCommand("select * from Oda101", baglanti);
@@ -354,7 +354,23 @@ namespace PansiyonOtomasyonu
         }
 
         private void buttonKaydet_Click(object sender, EventArgs e)
+
         {
+
+            // İlgili oda numarası ve tarih aralığı için sorgu yaparak doluluk kontrolü yapılacak
+            string odaNo = TxtOdaNo.Text;
+            string girisTarihi = dtpGiriş.Value.ToString("yyyy-MM-dd");
+            string cikisTarihi = dtpÇıkış.Value.ToString("yyyy-MM-dd");
+
+            baglanti.Open();
+            SqlCommand dolulukSorgusu = new SqlCommand("SELECT COUNT(*) FROM MüşteriEkle WHERE OdaNo = @OdaNo AND ((@GirişTarihi BETWEEN GirişTarihi AND ÇıkışTarihi) OR (@ÇıkışTarihi BETWEEN GirişTarihi AND ÇıkışTarihi))", baglanti);
+            dolulukSorgusu.Parameters.AddWithValue("@OdaNo", odaNo);
+            dolulukSorgusu.Parameters.AddWithValue("@GirişTarihi", girisTarihi);
+            dolulukSorgusu.Parameters.AddWithValue("@ÇıkışTarihi", cikisTarihi);
+
+            int dolulukSayisi = (int)dolulukSorgusu.ExecuteScalar();
+            baglanti.Close();
+        
             if (string.IsNullOrEmpty(TxtAd.Text) || string.IsNullOrEmpty(TxtSoyad.Text) || string.IsNullOrEmpty(comboBoxCinsiyet.Text) || string.IsNullOrEmpty(msdTxtTel.Text) || string.IsNullOrEmpty(TxtMail.Text) || string.IsNullOrEmpty(TxtKimlikNO.Text) || string.IsNullOrEmpty(TxtOdaNo.Text) || string.IsNullOrEmpty(TxtÜcret.Text))
             {
                 MessageBox.Show("Lütfen tüm bilgileri doldurun.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -398,7 +414,6 @@ namespace PansiyonOtomasyonu
                     baglanti.Close();
                 }
             }
-
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

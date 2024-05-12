@@ -47,7 +47,7 @@ namespace PansiyonOtomasyonu
 
         private void button9_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Sunfaduta Pansiyon Uygulaması/2024 BODRUM/MUĞLA ");
+            MessageBox.Show("Sunfaduta Pansiyon Uygulaması/2024/İZMİR ");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -109,7 +109,7 @@ namespace PansiyonOtomasyonu
 
             if (result == DialogResult.OK)
             {
-                Application.Exit(); // Uygulamadan çık
+                Application.Exit(); // Uygulamadan çık 
             }
         }
 

@@ -20,7 +20,7 @@ namespace PansiyonOtomasyonu
         }
         SqlConnection baglanti = new SqlConnection("Data Source = FATMA; Initial Catalog = UZAY PANSİYON; Integrated Security = True; Encrypt=False");
 
-     
+     // 
           
 
          
@@ -77,7 +77,7 @@ namespace PansiyonOtomasyonu
             SqlDataReader oku5 = komut5.ExecuteReader();
             while (oku5.Read())
             {
-                LblFaturalar.Text = oku5["toplam4"].ToString();
+                LblFaturalar.Text = oku5["toplam4"].ToString();  
 
             }
             baglanti.Close();
@@ -110,7 +110,9 @@ namespace PansiyonOtomasyonu
 
         }
 
-        private void BtnHesapla_Click_1(object sender, EventArgs e)
+        
+
+        private void BtnHesapla_Click(object sender, EventArgs e)
         {
             int personel = Convert.ToInt16(textBox1.Text);
             LblPersonelMaas.Text = (personel * 10000).ToString();
